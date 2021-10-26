@@ -1,0 +1,49 @@
+button.mainButton {
+  background: var(--main_color_1) !important;
+  border: 1px solid #707070 !important;
+  color: #fff !important;
+
+  span.v-btn__content {
+  }
+
+  &.large_button {
+    min-width: 200px !important;
+    font-size: 21px !important;
+    height: 56px !important;
+  }
+
+  // &.mid_button {
+  //   height: 37px !important;
+  //   min-width: 95px !important;
+  //   font-size: 23px !important;
+  //   line-height: 1;
+  // }
+
+  // &.center {
+  //   display: block;
+  //   margin: 0.5rem auto;
+  //   padding: 0 !important;
+  //   height: 45px !important;
+  // }
+
+  // &.flat {
+  //   background: transparent !important;
+  //   border: 1px solid var(--main_color_1) !important;
+  //   box-shadow: none !important;
+  //   color: var(--main_color_1) !important;
+  // }
+
+  // &.pop-btn {
+  //   height: 51px !important;
+  // }
+
+  // // Bg_Colors
+  // &.bgGreen {
+  //   background: #7bae3b !important;
+  // }
+
+  // &.bgRed {
+  //   background: #dc0000 !important;
+  //   color: #fff !important;
+  // }
+}

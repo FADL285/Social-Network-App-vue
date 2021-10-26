@@ -1,0 +1,25 @@
+.input_wrapper {
+  margin: 1.5rem 0;
+
+  &.moreInfo {
+    .labe_container {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  label {
+  }
+
+  input {
+    box-shadow: unset;
+    outline: none;
+
+    border: 1px solid #d8d8d8;
+    background: #eaedf1;
+    padding: 1rem;
+    border-radius: 10px;
+    width: 100%;
+    margin: 10px 0;
+  }
+}
