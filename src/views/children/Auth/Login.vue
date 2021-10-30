@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login auth">
     <div class="row">
       <div class="col-lg-6 d-none d-lg-block">
         <div class="container bg_section">
@@ -20,11 +20,11 @@
           </p>
 
           <main>
-            <h2 class="mainColor">Sign In Now</h2>
+            <h2 class="mainColor">log In Now</h2>
 
             <div class="input_wrapper">
               <label>Email Address</label>
-              <input type="text" v-model="data.email" />
+              <input type="email" v-model="data.email" />
             </div>
             <div class="input_wrapper moreInfo">
               <div class="labe_container">
@@ -35,13 +35,13 @@
                   ></label
                 >
               </div>
-              <input type="text" v-model="data.password" />
+              <input type="password" v-model="data.password" />
             </div>
 
             <v-btn
               @click="submitForm"
               :loading="btn_loaidng"
-              class="mainButton large_button my-5"
+              class="mainButton large_button my-1"
             >
               Sign In
             </v-btn>
@@ -79,52 +79,43 @@ export default {
         });
       } else {
         this.btn_loaidng = true;
-        this.$store.dispatch("auth_module/set_token", "adkjdsbjkbdskdvsk");
-
-        setTimeout(() => {
-          this.btn_loaidng = false;
-          this.$iziToast.success({
-            title: "success",
-            message: "login in success",
-          });
-          this.$router.push("/");
-        }, 1000);
 
         // let my_data = new FormData();
         // my_data.append("username", this.data.email);
         // my_data.append("password", this.data.password);
 
-        // this.$axios({
-        //   method: "post",
-        //   url: "login",
-        //   headers: {
-        //     "cache-control": "no-cache",
-        //     "content-type": "application/json",
-        //     Accept: "application/json",
-        //     "Accept-language": this.$store.getters["lang_module/lang"], // ==> Store (Vuex) <==
-        //   },
-        //   data: my_data,
-        // })
-        //   .then((res) => {
-        //     this.btn_loaidng = false;
-        //     this.$iziToast.success({
-        //       title: this.$t("validation.success"),
-        //       message: "login in success",
-        //     });
-        //     this.$store.dispatch("auth_module/set_token", res.data.data.token);
+        let my_data = {
+          email: this.data.email,
+          password: this.data.password,
+        };
 
-        //     // localStorage.setItem("socialApp_user_img", res.data.data.image);
-        //     // localStorage.setItem("socialApp_user_id", res.data.data.id);
+        this.$axios({
+          method: "post",
+          url: "login",
+          headers: {
+            "cache-control": "no-cache",
+            "content-type": "application/json",
+            Accept: "application/json",
+          },
+          data: my_data,
+        })
+          .then((res) => {
+            this.btn_loaidng = false;
 
-        //     this.$router.push("/");
-        //   })
-        //   .catch((err) => {
-        //     this.btn_loaidng = false;
-        //     this.$iziToast.error({
-        //       title: this.$t("validation.error"),
-        //       message: err.response.data.message,
-        //     });
-        //   });
+            this.$iziToast.success({
+              title: "success",
+              message: "login in success",
+            });
+            this.$store.dispatch("auth_module/set_token", res.data.token);
+            this.$router.push("/");
+          })
+          .catch(() => {
+            this.btn_loaidng = false;
+            this.$iziToast.error({
+              title: "warnning",
+              // message: err.response.data.message,
+            });
+          });
       }
     },
   },

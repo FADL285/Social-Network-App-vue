@@ -1,0 +1,56 @@
+// ========== Start fadeIn
+.fadeIn-enter-active,
+.fadeIn-leave-active {
+  transition-duration: 0.6s;
+  transition-property: opacity;
+  overflow: hidden;
+}
+
+.fadeIn-enter,
+.fadeIn-leave-to {
+  opacity: 0;
+}
+
+.fadeIn-enter-to,
+.fadeIn-leave {
+  opacity: 1;
+}
+// ========== End fadeIn
+
+// ========== Start fadeInUp
+.fadeInUp-enter-active,
+.fadeInUp-leave-active {
+  transition-duration: 0.6s;
+  transition-property: all;
+  overflow: hidden;
+}
+
+.fadeInUp-enter,
+.fadeInUp-leave-to {
+  transform: translateY(1rem);
+  opacity: 0;
+}
+
+.fadeInUp-enter-to,
+.fadeInUp-leave {
+  transform: translateY(0);
+  opacity: 1;
+}
+// ========== End fadeInUp
+
+.slither-enter-active,
+.slither-leave-active {
+  transition-duration: 0.6s;
+  transition-property: opacity transform;
+  overflow: hidden;
+}
+.slither-enter,
+.slither-leave-to {
+  opacity: 0;
+  transform: translateX(5rem);
+}
+.slither-enter-to,
+.slither-leave {
+  opacity: 1;
+  transform: translateX(0);
+}

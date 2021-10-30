@@ -10,12 +10,16 @@
 // components
 @import "components/input_wrapper";
 @import "components/main_button";
+@import "components/post";
+@import "components/custome_card";
+@import "components/popUpCom";
 
 // layout
+@import "layout/theNavbar";
 
 // pages
 @import "pages/homePage";
-@import "pages/login";
+@import "pages/auth";
 
 // rtl
 @import "mainRtl.scss";

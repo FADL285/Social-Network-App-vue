@@ -6,6 +6,9 @@ import Home from "../views/Home.vue"; // Home
 
 // Children
 import HomePage from "../views/children/HomePage.vue";
+import EditProfile from "../views/children/EditProfile.vue";
+import Profile from "../views/children/Profile.vue";
+import ShowFriends from "../views/children/ShowFriends.vue";
 
 // =============== Auth
 import Login from "../views/children/Auth/Login.vue";
@@ -35,6 +38,21 @@ const router = new VueRouter({
           path: "/",
           name: "HomePage",
           component: HomePage,
+        },
+        {
+          path: "profile",
+          name: "Profile",
+          component: Profile,
+        },
+        {
+          path: "editProfile",
+          name: "EditProfile",
+          component: EditProfile,
+        },
+        {
+          path: "showFriends",
+          name: "ShowFriends",
+          component: ShowFriends,
         },
       ],
     },

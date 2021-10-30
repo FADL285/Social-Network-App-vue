@@ -1,0 +1,7 @@
+.custome_card {
+  padding: 10px;
+  background: var(--main_Bg_Color);
+  @include main_boxshadow;
+  margin: 15px 0;
+  border-radius: 10px;
+}

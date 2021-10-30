@@ -13,7 +13,7 @@ import store from "./store";
 // ======== Axios
 import axios from "axios";
 Vue.prototype.$axios = axios; // Glopal variable
-axios.defaults.baseURL = "https://inflco.o.aait-d.com/dashboard"; // baseurl
+axios.defaults.baseURL = "https://social-app-laravel.herokuapp.com/api/"; // baseurl
 
 axios.defaults.headers.common = {
   "cache-control": "no-cache",

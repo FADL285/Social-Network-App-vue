@@ -1,0 +1,75 @@
+.pop_container {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  background-color: rgb(158 158 158 / 25%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99999;
+
+  .pop_body {
+    @media (min-width: 960px) {
+      width: 50%;
+    }
+    padding: 1rem;
+    animation-name: slide-in-left;
+    animation-duration: 1s;
+    animation-timing-function: ease;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: none;
+
+    .reservation {
+      background-color: #fff;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+
+      img {
+        width: 240px;
+        object-fit: contain;
+        margin-bottom: 15px;
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        button {
+          margin: 0.5rem;
+        }
+
+        @media (max-width: 550px) {
+          flex-direction: column;
+          button {
+            margin: 0.5rem auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .pop_container .pop_body {
+    width: 90%;
+  }
+}
+
+@keyframes slide-in-left {
+  0% {
+    -webkit-transform: translateX(-1000px);
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
