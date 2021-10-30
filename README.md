@@ -2,6 +2,10 @@
 
 Social Network App - ITI summer training graduation project
 
+## Note:
+
+Project Not Completed yet.
+
 ---
 
 ## Project setup
